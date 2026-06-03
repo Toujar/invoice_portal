@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// Base URL pointing to XAMPP backend
-const BASE_URL = 'http://localhost/invoice-portal/backend/api';
+const BASE_URL = 'https://invoice-portal.ifree.page/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
