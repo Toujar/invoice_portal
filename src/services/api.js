@@ -4,7 +4,6 @@ const BASE_URL = 'https://invoice-portal.ifree.page/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
-  withCredentials: true, // send session cookies
   headers: { 'Content-Type': 'application/json' },
 });
 
