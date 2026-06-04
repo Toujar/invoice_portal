@@ -4,9 +4,6 @@ const BASE_URL = 'https://invoice-portal.ifree.page/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
   withCredentials: true,
 });
 
@@ -26,8 +23,8 @@ api.interceptors.response.use(
 // AUTH
 // ============================================================
 export const authAPI = {
-  register: (data) => api.post('/auth.php?action=register', data),
-  login:    (data) => api.post('/auth.php?action=login', data),
+  register: (data) => api.post('/auth.php?action=register', new URLSearchParams(data)),
+  login:    (data) => api.post('/auth.php?action=login',    new URLSearchParams(data)),
   logout:   ()     => api.post('/auth.php?action=logout'),
   me:       ()     => api.get('/auth.php?action=me'),
 };
